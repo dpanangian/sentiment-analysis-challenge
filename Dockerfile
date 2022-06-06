@@ -6,4 +6,5 @@ RUN pip3 install gdown && \
     gdown --output ./models/model_state_dict.bin --id 1VliP3l8SxcgBN2B4PHwwE-Yn-1k5kzSS
 
 COPY ./app /app
+COPY ./config.json /app/config.json
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "15400"] 
