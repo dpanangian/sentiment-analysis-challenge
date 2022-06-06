@@ -10,5 +10,5 @@ RUN mkdir models
 RUN pip3 install gdown && \
     gdown --output ./models/model_state_dict.bin --id 1VliP3l8SxcgBN2B4PHwwE-Yn-1k5kzSS
 RUN mkdir bert
-RUN git clone https://huggingface.co/bert-base-uncased ./bert/
+RUN git-lfs clone https://huggingface.co/bert-base-uncased ./bert/
 CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "15400"] 
