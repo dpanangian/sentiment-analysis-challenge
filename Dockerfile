@@ -1,5 +1,7 @@
 FROM python:3.7
-RUN apt-get install git-lfs
+RUN apt update
+RUN apt install git-lfs
+
 RUN pip3 install transformers==2.8.0  fastapi uvicorn torch pydantic python-dotenv nltk
 RUN python -m nltk.downloader stopwords
 
