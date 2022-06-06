@@ -7,4 +7,5 @@ RUN pip3 install gdown && \
 
 COPY ./app /app
 COPY ./config.json /app/config.json
+WORKDIR /app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "15400"] 
