@@ -1,14 +1,19 @@
 FROM python:3.7
+RUN apt update
+RUN apt install git-lfs
+
 RUN pip3 install transformers==2.8.0  fastapi uvicorn torch pydantic python-dotenv nltk
 RUN python -m nltk.downloader stopwords
+
+COPY ./app src/app
+COPY ./config.json /src/config.json
+WORKDIR /src
 RUN mkdir models
 RUN pip3 install gdown && \
     gdown --output ./models/model_state_dict.bin --id 1VliP3l8SxcgBN2B4PHwwE-Yn-1k5kzSS
-
-COPY ./app /app
-COPY ./config.json /app/config.json
-WORKDIR /app
+RUN mkdir bert
+RUN git-lfs clone https://huggingface.co/bert-base-uncased 
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"] 
+CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "8000"] 

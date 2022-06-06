@@ -61,6 +61,7 @@ class BertClassifier(nn.Module):
 
 from transformers import AdamW, get_linear_schedule_with_warmup
 
+
 def initialize_model(epochs=4):
     """Initialize the Bert Classifier, the optimizer and the learning rate scheduler.
     """
