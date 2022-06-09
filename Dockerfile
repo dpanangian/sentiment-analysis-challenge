@@ -2,7 +2,7 @@ FROM python:3.7
 RUN apt update
 RUN apt install git-lfs
 
-RUN pip3 install transformers==2.8.0  fastapi uvicorn torch pydantic python-dotenv nltk sklearn pickle
+RUN pip3 install transformers==2.8.0  fastapi uvicorn torch pydantic python-dotenv nltk scikit-learn pickle
 RUN python -m nltk.downloader stopwords
 
 COPY ./api src/api
