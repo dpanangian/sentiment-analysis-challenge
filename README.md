@@ -3,7 +3,6 @@
 # Sentiment Analysis Challenge
 
 ## Demo
-
 The model is trained to classify sentiments (Irrelevant, Negative, Neutral and Positive).
 
  Here's a sample request to the API:
@@ -28,7 +27,7 @@ The response:
 }
 ```
 
-A running API also can be accessed here https://celonis-sentiment-analysis.azurewebsites.net/docs with the access token
+A running API also can be accessed here https://celonis-sentiment-analysis.azurewebsites.net/ with the access token
 
 ```sh
 932ea2a0-29b9-44ea-8f08-6c42f761b205
@@ -36,6 +35,7 @@ A running API also can be accessed here https://celonis-sentiment-analysis.azure
 
 
 ## Installation
+
 Clone this repo:
 
 ```sh
@@ -53,6 +53,10 @@ Download the pre-trained models:
 
 ```sh
 python scripts\download_models.py
+```
+create **.env** file with the access token:
+```sh
+API_KEY=<INSERT_TOKEN_HERE>
 ```
 ## Configuration
 
@@ -88,6 +92,9 @@ To use BERT replace **config.json** with :
     ]
 }
 ```
+Use SVM as default as it has better performance.
+
+*see performances on the notebooks
 ## Test the setup
 
 Run the application:
@@ -98,6 +105,10 @@ uvicorn api.app:app
 the API will run on http://127.0.0.1:8000/
 
 Available endpoints can be seen here http://127.0.0.1:8000/docs
+
+## Example using Postman
+![Example](screenshots\predict_using_postman.gif)
+
 
 
 

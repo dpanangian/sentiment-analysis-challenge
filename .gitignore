@@ -138,6 +138,7 @@ dmypy.json
 cython_debug/
 
 .history/
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -146,6 +147,7 @@ cython_debug/
 *.code-workspace
 
 assets/*.bin
-models/*
+models/bert_state_dict.bin
+models/SVM.pkl
 bert-base-uncased/
 
