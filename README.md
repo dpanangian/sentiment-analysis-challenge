@@ -28,7 +28,7 @@ The response:
 }
 ```
 
-A running API also can be accessed here https://celonis-sentiment-analysis.azurewebsites.net/ with the access token
+A running API also can be accessed here https://celonis-sentiment-analysis.azurewebsites.net/docs with the access token
 
 ```sh
 932ea2a0-29b9-44ea-8f08-6c42f761b205
