@@ -10,7 +10,7 @@ COPY ./config.json /src/config.json
 WORKDIR /src
 RUN mkdir models
 RUN pip3 install gdown && \
-    gdown https://drive.google.com/drive/folders/1PvOClskengpMakFUyQFqKELb4ipSpOtL?usp=sharing -O /models --folder
+    gdown https://drive.google.com/drive/folders/1PvOClskengpMakFUyQFqKELb4ipSpOtL?usp=sharing -O models --folder
 
 EXPOSE 8000
 
