@@ -3,6 +3,7 @@
 # Sentiment Analysis Challenge
 
 ## Demo
+_____
 
 The model is trained to classify sentiments (Irrelevant, Negative, Neutral and Positive).
 
@@ -36,6 +37,7 @@ A running API also can be accessed here https://celonis-sentiment-analysis.azure
 
 
 ## Installation
+_____
 
 Clone this repo:
 
@@ -55,9 +57,43 @@ Download the pre-trained models:
 ```sh
 python scripts\download_models.py
 ```
+## Configuration
+_____
 
-
+To use SVM replace **config.json** with :
+```sh
+{
+    "MODEL": "BERT",
+    "PARAMS":{
+        "BERT_MODEL": "bert-base-uncased",
+        "PRE_TRAINED_MODEL": "models/bert_state_dict.bin",
+        "MAX_SEQUENCE_LEN": 64
+    },
+    "CLASS_NAMES": [
+        "Irrelevant", 
+        "Negative", 
+        "Neutral", 
+        "Positive"
+    ]
+}
+```
+To use BERT replace **config.json** with :
+```sh
+{
+    "MODEL": "SVM",
+    "PARAMS":{
+        "PRE_TRAINED_MODEL": "models/svm.pkl"
+    },
+    "CLASS_NAMES": [
+        "Irrelevant", 
+        "Negative", 
+        "Neutral", 
+        "Positive"
+    ]
+}
+```
 ## Test the setup
+_____
 
 Run the application:
 
@@ -70,12 +106,6 @@ Available endpoints can be seen here http://127.0.0.1:8000/docs
 
 
 
-Send a test request:
-
-```sh
-python scripts/test_request
-
-```
 
 
 
