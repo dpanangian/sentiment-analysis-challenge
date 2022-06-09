@@ -22,10 +22,13 @@ regex==2022.6.2
 requests==2.27.1
 s3transfer==0.6.0
 sacremoses==0.0.53
+scikit-learn==1.1.1
+scipy==1.8.1
 sentencepiece==0.1.96
 six==1.16.0
 sniffio==1.2.0
 starlette==0.19.1
+threadpoolctl==3.1.0
 tokenizers==0.5.2
 torch==1.11.0
 tqdm==4.64.0
