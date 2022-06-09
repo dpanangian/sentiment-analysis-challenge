@@ -1,13 +1,24 @@
+import json
+
 from fastapi import APIRouter, Depends
 
 from app.auth import authenticate
-from app.schema import SentimentRequest, SentimentResponse
+from app.classifier.bert import BERT
+from app.classifier.svm import SVM
+from app.schema import SentimentRequest, SentimentRequests, SentimentResponse, SentimentResponses
 
-from .classifier.model import Model, get_model
+from .classifier.model import Model
 
 router = APIRouter()
 
+with open("config.json") as json_file:
+    config = json.load(json_file)
 
+def get_model():
+    if config["MODEL"] == "BERT":
+        return BERT() 
+    if config["MODEL"] == "SVM":
+        return SVM()     
 
 @router.get("/initialized")
 def check_status(authenticated=Depends(authenticate)):
@@ -22,7 +33,11 @@ def check_status(authenticated=Depends(authenticate)):
     
 @router.post("/predict", response_model=SentimentResponse)
 def predict(request: SentimentRequest, authenticated=Depends(authenticate), model: Model = Depends(get_model)):
-    sentiment, confidence, probabilities = model.predict(request.text)
+    text, sentiment, confidence, probabilities = model.predict(request.text)
     return SentimentResponse(
-        sentiment=sentiment, confidence=confidence, probabilities=probabilities
+        text=text, sentiment=sentiment, confidence=confidence, probabilities=probabilities
     )
+@router.post("/predict_on_batch", response_model=SentimentResponses)
+def predict(request: SentimentRequests, authenticated=Depends(authenticate), model: Model = Depends(get_model)):
+    result = model.predict_on_batch(request.text)
+    return  SentimentResponses.parse_obj(result)

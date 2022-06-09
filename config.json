@@ -1,11 +1,12 @@
 {
-    "BERT_MODEL": "./bert-base-uncased",
-    "PRE_TRAINED_MODEL": "models/model_state_dict.bin",
+    "MODEL": "SVM",
+    "PARAMS":{
+        "PRE_TRAINED_MODEL": "models/SVM.pkl"
+    },
     "CLASS_NAMES": [
         "Irrelevant", 
         "Negative", 
         "Neutral", 
         "Positive"
-    ],
-    "MAX_SEQUENCE_LEN": 64
+    ]
 }
