@@ -107,7 +107,7 @@ the API will run on http://127.0.0.1:8000/
 Available endpoints can be seen here http://127.0.0.1:8000/docs
 
 ## Example using Postman
-![Example]([screenshots\predict_using_postman.gif)](https://raw.githubusercontent.com/dpanangian/sentiment-analysis-challenge/master/screenshots/predict_using_postman.gif)
+![Example](https://raw.githubusercontent.com/dpanangian/sentiment-analysis-challenge/master/screenshots/predict_using_postman.gif)
 
 
 
