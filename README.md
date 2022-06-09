@@ -3,7 +3,6 @@
 # Sentiment Analysis Challenge
 
 ## Demo
-_____
 
 The model is trained to classify sentiments (Irrelevant, Negative, Neutral and Positive).
 
@@ -37,8 +36,6 @@ A running API also can be accessed here https://celonis-sentiment-analysis.azure
 
 
 ## Installation
-_____
-
 Clone this repo:
 
 ```sh
@@ -58,7 +55,6 @@ Download the pre-trained models:
 python scripts\download_models.py
 ```
 ## Configuration
-_____
 
 To use SVM replace **config.json** with :
 ```sh
@@ -93,7 +89,6 @@ To use BERT replace **config.json** with :
 }
 ```
 ## Test the setup
-_____
 
 Run the application:
 
