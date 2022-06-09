@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AdamW, BertModel, BertTokenizer, get_linear_schedule_with_warmup
 
-from app.classifier.preprocessing import bert_preprocessing
+from api.classifier.preprocessing import bert_preprocessing
 
 from .model import Model
 

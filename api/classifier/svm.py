@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
 
-from app.classifier.preprocessing import text_preprocessing
+from api.classifier.preprocessing import text_preprocessing
 
 from .model import Model
 
