@@ -1,7 +1,9 @@
 {
-    "MODEL": "SVM",
+    "MODEL": "BERT",
     "PARAMS":{
-        "PRE_TRAINED_MODEL": "models/SVM.pkl"
+        "BERT_MODEL": "bert-base-uncased",
+        "PRE_TRAINED_MODEL": "models/bert_state_dict.bin",
+        "MAX_SEQUENCE_LEN": 64
     },
     "CLASS_NAMES": [
         "Irrelevant", 

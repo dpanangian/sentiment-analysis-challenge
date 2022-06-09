@@ -10,9 +10,7 @@ COPY ./config.json /src/config.json
 WORKDIR /src
 RUN mkdir models
 RUN pip3 install gdown && \
-    gdown --output ./models/model_state_dict.bin --id 1VliP3l8SxcgBN2B4PHwwE-Yn-1k5kzSS
-RUN mkdir bert
-RUN git-lfs clone https://huggingface.co/bert-base-uncased 
+    gdown https://drive.google.com/drive/folders/1PvOClskengpMakFUyQFqKELb4ipSpOtL?usp=sharing -O /models --folder
 
 EXPOSE 8000
 
